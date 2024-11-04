@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="style.css">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Register for University Connect</h2>
+    <div class="card shadow-lg animated-card">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                    <small class="form-text text-muted">Enter a unique username.</small>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <small class="form-text text-muted">Choose a strong password.</small>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" class="form-control" id="department" name="department" required>
+                </div>
+                <div class="mb-3">
+                    <label for="institute" class="form-label">Institute</label>
+                    <input type="text" class="form-control" id="institute" name="institute" required>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="text" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label for="semester" class="form-label">Semester</label>
+                    <input type="text" class="form-control" id="semester" name="semester" required>
+                </div>
+                <div class="mb-3">
+                    <label for="interests" class="form-label">Interests</label>
+                    <input type="text" class="form-control" id="interests" name="interests">
+                    <small class="form-text text-muted">Comma-separated values.</small>
+                </div>
+                <div class="mb-3">
+                    <label for="instagram_id" class="form-label">Instagram ID</label>
+                    <input type="text" class="form-control" id="instagram_id" name="instagram_id">
+                    <small class="form-text text-muted">Enter your Instagram username only.</small>
+                </div>
+                <div class="mb-3">
+                    <label for="profile_photo" class="form-label">Profile Photo (required)</label>
+                    <input type="file" class="form-control" id="profile_photo" name="profile_photo" accept="image/*"
+                        required>
+                    <small class="form-text text-muted">Upload a clear photo.</small>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary w-50">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom text-white bg-dark py-3">
+    <div class="container text-center">
+        <p>&copy; 2024 University Connect. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %}

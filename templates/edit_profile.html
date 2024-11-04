@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Edit Profile</h2>
+<form method="POST" enctype="multipart/form-data" class="container">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username <small class="text-muted">(required)</small></label>
+        <input type="text" class="form-control" id="username" name="username" value="{{ user['username'] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="department" class="form-label">Department <small class="text-muted">(required)</small></label>
+        <input type="text" class="form-control" id="department" name="department" value="{{ user['department'] }}"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label for="institute" class="form-label">Institute <small class="text-muted">(required)</small></label>
+        <input type="text" class="form-control" id="institute" name="institute" value="{{ user['institute'] }}"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label for="year" class="form-label">Year <small class="text-muted">(required)</small></label>
+        <input type="text" class="form-control" id="year" name="year" value="{{ user['year'] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="semester" class="form-label">Semester <small class="text-muted">(required)</small></label>
+        <input type="text" class="form-control" id="semester" name="semester" value="{{ user['semester'] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="interests" class="form-label">Interests <small class="text-muted">(optional)</small></label>
+        <input type="text" class="form-control" id="interests" name="interests" value="{{ user['interests'] }}">
+        <small class="form-text text-muted">Separate interests with commas.</small>
+    </div>
+
+    <div class="mb-3">
+        <label for="instagram_id" class="form-label">Instagram ID <small class="text-muted">(required)</small></label>
+        <input type="text" class="form-control" id="instagram_id" name="instagram_id"
+            value="{{ user['instagram_id'] }}">
+        <small class="form-text text-muted">Enter your Instagram username (without @ or link).</small>
+    </div>
+
+    <div class="mb-3">
+        <label for="profile_photo" class="form-label">Profile Photo <small class="text-muted">(optional)</small></label>
+        <input type="file" class="form-control" id="profile_photo" name="profile_photo" accept="image/*">
+        <small class="form-text text-muted">Upload a clear photo of yourself (JPEG, PNG).</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Update Profile</button>
+</form>
+
+<div class="mt-4">
+    <h4 class="text-danger">Delete Your Profile</h4>
+    <p class="text-muted">This action is irreversible. Please be certain before proceeding.</p>
+    <form action="{{ url_for('delete_profile', user_id=user['_id']) }}" method="POST"
+        onsubmit="return confirm('Are you sure you want to delete your profile permanently? This action cannot be undone.');">
+        <button type="submit" class="btn btn-danger">Delete Profile</button>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    h2 {
+        font-family: 'Arial', sans-serif;
+        color: #343a40;
+    }
+
+    .form-label {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .form-text {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .container {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+</style>
+{% endblock %}

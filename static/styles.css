@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;   
+}
+
+.flash {
+    color: red;
+    font-weight: bold;
+}
