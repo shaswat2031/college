@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/university_connect'
+app.config['MONGO_URI'] = 'mongodb+srv://shaswat:shaswat123@cluster0.7kqw7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 app.config['UPLOAD_FOLDER'] = 'static/profile_photos'  
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB limit
 mongo = PyMongo(app)
